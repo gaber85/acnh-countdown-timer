@@ -9,14 +9,124 @@
 
 .ac-logo {
   align-self: flex-end;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
   width: 50%;
   max-width: 400px;
 }
 
+/*===========================*\
+  Countdown Timer
+\*===========================*/
+
+.countdown-container {
+  opacity: 1;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 0 5vw;
+  border-radius: 500px;
+  border: 3px solid #FDD051;
+  padding: 3vw 7vw;
+  animation: fadeInOpacity .3s ease-in-out ;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+    margin-top: -25px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+.countdown-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 6.5vw;
+  color: white;
+}
+
+.countdown-container div p {
+  margin: 0;
+}
+.countdown-container div :last-child {
+  font-size: 3vw;
+  padding-top: 1vw;
+  color: white;
+}
+
+.colon {
+  align-self: flex-start;
+  line-height: 1;
+}
+
+/*===========================*\
+  Loader
+\*===========================*/
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*===========================*\
+  Mobile Size
+\*===========================*/
+
 @media screen and (max-width: 768px) {
+  .App {
+    height: 55vh;
+    justify-content: space-between;
+  }
   .ac-logo {
     width: 70%;
     align-self: center;
+  }
+  .loader {
+    font-size: 5px;
+  }
+  .countdown-container {
+    border: 1px solid #FDD051;
   }
 }
