@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import moment from 'moment';
+import momentTZ from 'moment-timezone';
+
 
 import { useInterval } from '../hooks/useInterval';
 
 const Countdown = () => {
 
-  const releaseDate = moment('03-20-2020', 'MM DD YYYY, h:mm a');
+  const releaseDate = momentTZ.tz('2020-03-20 00:00', 'America/Toronto');
 
   const [days, setDays] = useState(null);
   const [hours, setHours] = useState(null)
