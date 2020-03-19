@@ -9,10 +9,10 @@ const Countdown = () => {
 
   const releaseDate = momentTZ.tz('2020-03-20 00:00', 'America/Toronto');
 
-  const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [days, setDays] = useState(null);
+  const [hours, setHours] = useState(null);
+  const [minutes, setMinutes] = useState(null);
+  const [seconds, setSeconds] = useState(null);
 
   const updateCountdown = () => {
     const currentTime = moment();
